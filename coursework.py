@@ -50,15 +50,15 @@ model = LinearRegression()
 print("Model1: ")
 model.fit(X_train, y_train)
 print(model.coef_)
-'\n'
+print('\n')
 print("Model2: ")
 model.fit(X1_train, y1_train)
 print(model.coef_)
-'\n'
+print('\n')
 print("Model3: ")
 model.fit(X2_train, y2_train)
 print(model.coef_)
-'\n'
+
 
 
 
