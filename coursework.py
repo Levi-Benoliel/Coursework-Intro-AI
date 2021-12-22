@@ -176,8 +176,18 @@ model2 = LinearRegression()
 model3 = LinearRegression()
 
 
+<<<<<<< HEAD
+=======
+#sample = np.array(y)
+#sample2 = np.array(y1)
+#sample3 = np.array(y2)
+>>>>>>> dc3677f8ea0746d6083125cf6859e9e0c501057d
 
+#model.predict(sample.reshape(-1,11))
+#model2.predict(sample2.reshape(-1,11))
+#model3.predict(sample3.reshape(-1,11))
 
+<<<<<<< HEAD
 #sample = np.array(y)
 #sample2 = np.array(y1)
 #sample3 = np.array(y2)
@@ -190,6 +200,8 @@ model3 = LinearRegression()
 
 
 
+=======
+>>>>>>> dc3677f8ea0746d6083125cf6859e9e0c501057d
 print(X_train.size)
 print(X1_train.size)
 print(X2_train.size)
@@ -199,8 +211,11 @@ print(y2_train.size)
 
 
 
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> dc3677f8ea0746d6083125cf6859e9e0c501057d
 print(model)
 model.fit(X_train, y_train)
 print(model.coef_)
@@ -210,6 +225,8 @@ print(model3)
 model.fit(X2_train, y2_train)
 print(model.coef_)
 
+
+plt.scatter(X_train, y_train)
 
 
 
