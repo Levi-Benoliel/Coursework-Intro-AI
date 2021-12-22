@@ -46,24 +46,38 @@ X2_train, X2_test, y2_train, y2_test = train_test_split(X2, y2, test_size=0.5, r
 
 
 # build the model
-model = LinearRegression().fit(X,y)
-model2 = LinearRegression().fit(X1,y1)
-model3 = LinearRegression().fit(X2,y2)
+model = LinearRegression()
+model2 = LinearRegression()
+model3 = LinearRegression()
 
 
-predict(y)
-predict(y1)
-predict(y2)
+#sample = np.array(y)
+#sample2 = np.array(y1)
+#sample3 = np.array(y2)
+
+#model.predict(sample.reshape(-1,11))
+#model2.predict(sample2.reshape(-1,11))
+#model3.predict(sample3.reshape(-1,11))
+
+print(X_train.size)
+print(X1_train.size)
+print(X2_train.size)
+print(y_train.size)
+print(y1_train.size)
+print(y2_train.size)
 
 
-print(Model1 + '/n')
+
+print(model)
 model.fit(X_train, y_train)
-print(model.coef_+ '/n')
-print(Model2+ '/n')
+print(model.coef_)
+print(model2)
 model.fit(X1_train, y1_train)
-print(Model3+ '/n')
+print(model3)
 model.fit(X2_train, y2_train)
 print(model.coef_)
 
+
+plt.scatter(X_train, y_train)
 
 
