@@ -4,6 +4,7 @@ import pandas as pd
 import matplotlib.pyplot as plt
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LinearRegression
+
 from sklearn import metrics
 from fast_ml.model_development import train_valid_test_split
 from sklearn.metrics import confusion_matrix
@@ -86,13 +87,14 @@ y2 = df['cnt'].values
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=1)
 #Xs_train, X_val, y_train, y_val = train_test_split(X_train, y_train, test_size=0.25, random_state=1)
 
+"""
 std = StandardScaler()
 afp = np.append(X_train[].values, X_test['AFP'].values)
 std.fit(afp)
 
 X_train[['cnt']] = std.transform(X_train['cnt'])
 X_test[['cnt']] = std.transform(X_test['cnt'])
-
+"""
 
 
 
@@ -127,10 +129,27 @@ plt.show()
 
 model = LinearRegression()
 model2 = LinearRegression()
+#model3 = Sequential()
 
+
+from sklearn.cluster import SpectralClustering
+model = SpectralClustering(n_clusters=2, affinity='nearest_neighbors',
+                           assign_labels='kmeans')
+labels = model.fit_predict(X)
+plt.scatter(X[:, 0], X[:, 1], c=labels, s=50, cmap='viridis');
 
 model.fit(X_train, y_train)
 acc = model.score(X_test, y_test)
+
+
+from sklearn.datasets import make_blobs
+X, y_true = make_blobs(n_samples=300, centers=4, cluster_std=0.60, random_state=0)
+plt.scatter(X[:, 0], X[:, 1], s=50);
+
+plt.scatter(X[:, 0], X[:, 1], c=y_kmeans, s=50, cmap='viridis')
+
+centers = kmeans.cluster_centers_
+plt.scatter(centers[:, 0], centers[:, 1], c='black', s=200, alpha=0.5);
 
 
 #print("Coefficient: \n", model.coef_)
